@@ -3,6 +3,7 @@ import math
 import matplotlib.pyplot as plt
 import random
 
+from utils import load_img
 
 class Node():
     def __init__(self, x, y):
@@ -138,15 +139,15 @@ class RrtAlgorithm():
         print('Waypoints: ', self.way_points)
 
 if __name__=="__main__":
-    # load_img('map.png')
+    # load_img('img/simple_map.png')
     # read_img('map.npy')
 
-    grid = np.load('map.npy')
+    grid = np.load('simple_map.npy')
     print('size = ', grid.shape)
-    start = np.array([50.0, 50.0])
-    goal = np.array([200.0, 300.0])
+    start = np.array([100.0, 100.0])
+    goal = np.array([750.0, 750.0])
     num_iteration = 500
-    step_size = 20
+    step_size = 50
     goal_region = plt.Circle((goal[0], goal[1]), step_size, color='b', fill=False)
 
     fig = plt.figure("RRT algorithm")

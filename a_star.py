@@ -147,10 +147,10 @@ class AStar():
             self.extract_path(goal.parent)
 
 if __name__=="__main__":
-    map = np.load('map.npy')
+    map = np.load('map/simple_map.npy')
     print('size = ', map.shape)
-    start = np.array([50.0, 50.0])
-    goal = np.array([200.0, 300.0])
+    start = np.array([100.0, 100.0])
+    goal = np.array([750.0, 750.0])
     
     goal_region = plt.Circle((goal[0], goal[1]), 2, color='b', fill=False)
 

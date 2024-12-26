@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from PIL import Image, ImageOps
 
-def load_img(filename):
+def load_img(filename, savename = 'map.npy'):
     img = Image.open(filename)
     img = ImageOps.grayscale(img)
 
@@ -14,7 +14,7 @@ def load_img(filename):
     plt.imshow(np_img)
 
     # Save image
-    np.save('map.npy', np_img)
+    np.save(savename, np_img)
 
 def read_img(filename):
     grid = np.load(filename)
@@ -48,3 +48,5 @@ def grid_point_to_map(cell_x, cell_y, grid_coordinate):
     map_y = grid_coordinate[1]*cell_y + cell_y//2
 
     return [map_x, map_y]
+
+# load_img('img/simple_map_1.png', 'simple_map_1.npy')
